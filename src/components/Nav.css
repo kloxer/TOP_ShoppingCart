@@ -1,0 +1,26 @@
+
+
+
+
+
+.pageTop{
+    text-align: center;
+    border-width: 0px 0px 10px 0px;
+    border-style: solid;
+
+}
+ul{
+    list-style: none;
+    display: flex;
+    gap: 8px;
+    
+}
+.nav{
+    
+    display: flex;
+    justify-content: space-between;
+}
+a{
+    text-decoration: none;
+    padding:5px;
+}
