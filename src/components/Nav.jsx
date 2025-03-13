@@ -1,4 +1,8 @@
 import "./Nav.css"
+
+import HomePage from "./WholePage";
+import { Link } from "react-router-dom";
+
 function Nav(){
     return (
     <div className="pageTop">
@@ -6,8 +10,8 @@ function Nav(){
 
     <nav className="nav">
         <div className="leftNav">
-            <a href="">Home</a>
-            <a href="">Store</a>
+            <Link to="/home">Home</Link>
+            <Link to="/shopping">Store</Link>
         </div>
 
         <a href="">Cart</a>
