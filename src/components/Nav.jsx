@@ -3,7 +3,9 @@ import "./Nav.css"
 import HomePage from "./WholePage";
 import { Link } from "react-router-dom";
 
-function Nav(){
+function Nav({cart}){
+    const total = cart.reduce((acc,item)=> acc + item.qty, 0);
+
     return (
     <div className="pageTop">
     <h1>FAKE MART</h1>
@@ -13,8 +15,8 @@ function Nav(){
             <Link to="/home">Home</Link>
             <Link to="/shopping">Store</Link>
         </div>
-
-        <a href="">Cart</a>
+        
+        <a href="">Cart : {total}</a>
 
 
         </nav>
