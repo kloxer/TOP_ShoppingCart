@@ -4,7 +4,12 @@ import HomePage from "./WholePage";
 import { Link } from "react-router-dom";
 
 function Nav({cart}){
-    const total = cart.reduce((acc,item)=> acc + item.qty, 0);
+    let total = 0
+    console.log("cart")
+    console.log(cart)
+    if (cart.length >  1){
+        total = cart.reduce((acc,item)=> acc + item.qty, 0);
+    }
 
     return (
     <div className="pageTop">
@@ -16,7 +21,7 @@ function Nav({cart}){
             <Link to="/shopping">Store</Link>
         </div>
         
-        <a href="">Cart : {total}</a>
+        <Link to="/cart">Cart: {cart.length -1} </Link>
 
 
         </nav>

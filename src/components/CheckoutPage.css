@@ -1,0 +1,20 @@
+.checkoutGrid{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+
+.checkoutCard{
+    display:flex;
+    border-style: solid;
+}
+.titleAndPrice{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.leftSide{
+    height:100px;
+}
+
+
