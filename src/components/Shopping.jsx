@@ -44,7 +44,11 @@ function IndividualProduct({product, addToCart}){
 
     <p className="category">Category: {product.category}</p>
     <label htmlFor="ammount">Amount : ${product.price}</label>
-    <input id={product.id} type="number" minLength="1" maxLength="99" required onChange={handleQuantityChange}/>
+    <input id={product.id} type="number" min="1" max="99"
+     onChange={handleQuantityChange}
+
+     defaultValue="1"
+    />
     <button id={product.id}  onClick={()=> addToCart(product.id,quantity)}>Add to cart</button>
 
 </div>
