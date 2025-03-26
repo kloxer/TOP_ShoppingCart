@@ -3,7 +3,7 @@ export default function EntryInfo(){
     return(
         <>
         
-        Just a regular website</>
+        <p className="">Just a regular website</p></>
     )
 }
 

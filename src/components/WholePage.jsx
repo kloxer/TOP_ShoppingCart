@@ -1,7 +1,7 @@
 import Nav from "./Nav"
 import EntryInfo
  from "./EntryInfo"
-import "./WholePage.css"
+import "./index.css"
 
 import { useEffect, useState } from "react"
 
@@ -90,7 +90,8 @@ function WholePage(){
        
     }, [])
 
-    return(<>
+    return(
+    <div id="wholePage" className="mx-auto max-w-screen-md">
     <Nav cart={cart}/>
     
     {name === "home" ? (
@@ -102,7 +103,7 @@ function WholePage(){
     
     (<EntryInfo />)} 
     
-    </>)
+    </div>)
 }
 
 export default WholePage

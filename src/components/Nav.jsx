@@ -1,4 +1,3 @@
-import "./Nav.css"
 
 import HomePage from "./WholePage";
 import { Link } from "react-router-dom";
@@ -12,12 +11,12 @@ function Nav({cart}){
     }
 
     return (
-    <div className="pageTop">
-    <h1>FAKE MART</h1>
+    <div className="flex flex-col border-b-4 gap-3 pt-7 pb-2 px-4">
+    <h1 className="text-xl font-bold text-center ">FAKE MART</h1>
 
-    <nav className="nav">
-        <div className="leftNav">
-            <Link to="/home">Home</Link>
+    <nav className="flex flex-row justify-between ">
+        <div className="flex gap-2">
+            <Link to="/home" className="hover:bg-blue-500">Home</Link>
             <Link to="/shopping">Store</Link>
         </div>
         
