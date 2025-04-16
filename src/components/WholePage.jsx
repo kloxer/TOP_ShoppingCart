@@ -91,7 +91,7 @@ function WholePage(){
     }, [])
 
     return(
-    <div id="wholePage" className="mx-auto max-w-screen-md">
+    <div id="wholePage" className="bg-gray-200 font-mono ">
     <Nav cart={cart}/>
     
     {name === "home" ? (

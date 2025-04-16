@@ -10,18 +10,22 @@ function Nav({cart}){
         total = cart.reduce((acc,item)=> acc + item.qty, 0);
     }
 
+    const navLinkClass = "hover:underline hover:text-gray-500 font-bold";
+
     return (
-    <div className="flex flex-col border-b-4 gap-3 pt-7 pb-2 px-4">
-    <h1 className="text-xl font-bold text-center ">FAKE MART</h1>
+    <div className="bg-amber-600 px-2 ">
 
-    <nav className="flex flex-row justify-between ">
-        <div className="flex gap-2">
-            <Link to="/home" className="hover:bg-blue-500">Home</Link>
-            <Link to="/shopping">Store</Link>
-        </div>
+    <nav className="flex justify-between items-end  pt-5 pb-5 text-white ">
+
+    <h1 className="font-bold  text-2xl ">FAKE MART</h1>
+
+        <div className="flex gap-3 font-bold">
+            <Link to="/home" className={navLinkClass}>Home</Link>
+            <Link to="/shopping" className={navLinkClass}>Store</Link>
+
         
-        <Link to="/cart">Cart: {cart.length -1} </Link>
-
+        <Link to="/cart" className='bg-white text-black rounded-sm px-1' >Cart:{cart.length -1} </Link>
+        </div>
 
         </nav>
     

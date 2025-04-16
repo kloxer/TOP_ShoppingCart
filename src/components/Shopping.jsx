@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 
-import "./Shopping.css"
 
 export default function ShoppingView({updateCart, products, loading, error}){
 
