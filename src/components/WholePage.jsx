@@ -56,6 +56,7 @@ function WholePage(){
                     }
                 ])
             }
+            console.log(cart)
   
         }
         
