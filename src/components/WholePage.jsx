@@ -18,8 +18,17 @@ function WholePage(){
 
     }])
 
+    const [showPopup, setshowPopup] = useState(false)
+
+    function showPop(){
+        setshowPopup(true)
+        console.log(showPopup)
+        setTimeout(() => setshowPopup(false), 2000); // Close after 2 seconds
+
+    }
 
     function updateCart(id,qty){
+        showPop()
         let quantity = parseInt(qty)
         const existingItem = cart.find(item => item.id == id)
         if (existingItem){
@@ -98,9 +107,9 @@ function WholePage(){
     {name === "home" ? (
     (<EntryInfo />)
     ) : name ==="shopping" ? 
-    (<ShoppingView updateCart={updateCart} products={products} loading={loading} error={error}/>)
+    (<ShoppingView updateCart={updateCart} products={products} loading={loading} error={error} showPopup={showPopup} />)
     : name ==="cart" ?
-(<CheckoutPage cart={cart} products={products} loading={loading} error={error}  updateCart={updateCart} />):
+(<CheckoutPage className=" bg-amber-200" cart={cart} products={products} loading={loading} error={error}  updateCart={updateCart} />):
     
     (<EntryInfo />)} 
     

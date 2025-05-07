@@ -13,3 +13,17 @@
       -moz-appearance: textfield;
     }
   }
+
+
+
+/* Add this in App.css or index.css */
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: scale(0.95); }
+    10% { opacity: 1; transform: scale(1); }
+    90% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.95); }
+  }
+  
+  .animate-fade-in-out {
+    animation: fadeInOut 2s ease-in-out forwards;
+  }

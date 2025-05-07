@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react"
 
 
-export default function ShoppingView({updateCart, products, loading, error}){
+export default function ShoppingView({updateCart, products, loading, error, showPopup}){
 
 
     if (loading){
         return (<h2>Loading...</h2>)
     }
     return(<>
-        <ProductCardGrid products={products} updateCart={updateCart}/>
+        <ProductCardGrid products={products} updateCart={updateCart} showPopup={showPopup}/>
 
         </>)
 }
 
-function ProductCardGrid({products ,updateCart}){
+function ProductCardGrid({products ,updateCart, showPopup}){
 
     
     return(
@@ -22,14 +22,15 @@ function ProductCardGrid({products ,updateCart}){
 
 
     {products.map(product=>(
-       <IndividualProduct product={product} addToCart={updateCart}  /> 
+       <IndividualProduct product={product} addToCart={updateCart} showPopup={showPopup} /> 
         
         ))}
     </div>)
 
 }
 
-function IndividualProduct({product, addToCart}){
+function IndividualProduct({product, addToCart, showPopup}){
+
     const [quantity, setQuantity] = useState(1)
 
     function handleQuantityChange(e){
@@ -44,8 +45,16 @@ function IndividualProduct({product, addToCart}){
 
     }
     return(
-    <div key={product.id} className="shadow-md  flex  justify-between flex-col bg-white  px-2 py-4 gap-1" >
+    <div key={product.id} className="shadow-md  flex  justify-between flex-col bg-white  px-2 py-4 gap-1 border-1 border-gray-300" >
     
+    {showPopup && (
+        <div className="fixed bottom-6 right-6 bg-green-600 text-white px-5 py-3 rounded-lg  animate-fade-in-out">
+          ✅ Item added to cart!
+        </div>
+      )}
+
+
+
         <img className="w-full h-50 object-contain" src={product.image} alt="" />
         
     

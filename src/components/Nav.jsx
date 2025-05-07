@@ -13,7 +13,7 @@ function Nav({cart}){
     const navLinkClass = "hover:underline hover:text-gray-500 font-bold";
 
     return (
-    <div className="bg-amber-600 px-2 ">
+    <div className="bg-amber-600 px-2  shadow-lg border-b-1 border-gray-400">
 
     <nav className="flex justify-between items-end  pt-5 pb-5 text-white ">
 
