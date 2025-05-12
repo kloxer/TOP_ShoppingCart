@@ -15,7 +15,7 @@ function Nav({cart}){
     return (
     <div className="bg-amber-600 px-2  shadow-lg border-b-1 border-gray-400">
 
-    <nav className="flex justify-between items-end  pt-5 pb-5 text-white ">
+    <nav className="flex justify-between items-end  pt-5 pb-5 text-white  md:px-30">
 
     <h1 className="font-bold  text-2xl ">FAKE MART</h1>
 
