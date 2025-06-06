@@ -34,13 +34,23 @@ function IndividualProduct({product, addToCart, showPopup}){
     const [quantity, setQuantity] = useState(1)
 
     function handleQuantityChange(e){
+        if (parseInt(e.target.value) < 1 || parseInt(e.target.value) == 0){
+            e.target.value = 1; // Reset to 1 if out of bounds
+            console.log("Quantity cannot be less than 1");
+        }
+        else{
         setQuantity(parseInt(e.target.value));
+    }
     }
     
     function increaseQty(){
         setQuantity(quantity => quantity + 1)
     }
     function decreaseQty(){
+        if (quantity <= 1){
+            console.log("Quantity cannot be less than 1");
+            return;
+        }
         setQuantity(quantity => quantity - 1)
 
     }
@@ -52,7 +62,6 @@ function IndividualProduct({product, addToCart, showPopup}){
           ✅ Item added to cart!
         </div>
       )}
-
 
 
         <img className="w-full h-50 object-contain" src={product.image} alt="" />
@@ -68,15 +77,9 @@ function IndividualProduct({product, addToCart, showPopup}){
             <button className="cursor-pointer  rounded-2xl font-bold px-3 py-2 bg-gray-300 text-black " 
             onClick={()=>decreaseQty()}>&#45;</button>
 
-            <input id={product.id} type="number" min="1" max="99"
-             
-             input="numeric"
 
-                className="text-center overflow-hidden text-xl font-bold"
-             defaultValue="1"
-             onChange={e => handleQuantityChange(e)}
-             value={quantity}
-            />
+            <span className="text-center overflow-hidden text-xl font-bold"
+>{quantity}</span>
             
             <button onClick={()=>increaseQty()}
             className="cursor-pointer rounded-2xl font-bold px-3 py-2 bg-gray-300 text-black " >&#43;</button>

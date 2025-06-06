@@ -8,6 +8,7 @@ import { useEffect, useState } from "react"
  import { useParams } from "react-router-dom";
 import ShoppingView from "./Shopping";
 import CheckoutPage from "./CheckoutPage";
+import Success from "./SucessfullPurchase";
 
 function WholePage(){
     const {name} = useParams();
@@ -26,6 +27,13 @@ function WholePage(){
         setTimeout(() => setshowPopup(false), 2000); // Close after 2 seconds
 
     }
+
+    function resetCart(){
+        setCart([{
+            id:0,
+            qty:0
+        }])
+    } 
 
     function updateCart(id,qty){
         showPop()
@@ -109,8 +117,11 @@ function WholePage(){
     ) : name ==="shopping" ? 
     (<ShoppingView updateCart={updateCart} products={products} loading={loading} error={error} showPopup={showPopup} />)
     : name ==="cart" ?
-(<CheckoutPage className=" bg-amber-200" cart={cart} products={products} loading={loading} error={error}  updateCart={updateCart} />):
-    
+(<CheckoutPage cart={cart} products={products} loading={loading} error={error}  updateCart={updateCart} resetCart={resetCart}/>)
+
+    : name==="success" ? 
+    (<Success resetCart={resetCart}/>):
+
     (<EntryInfo />)} 
     
     </div>)

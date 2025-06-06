@@ -1,5 +1,8 @@
+import { Link } from "react-router-dom";
+
+
 import { useEffect, useState } from "react"
-function CheckoutPage({cart,products,loading,error, updateCart}){
+function CheckoutPage({cart,products,loading,error, updateCart, resetCart}){
     // so now I want to filter from products the Id's i actually have
     const cartFilter = cart.slice(1) // Filter out the first empty item
     console.log(cartFilter)
@@ -39,7 +42,7 @@ function CheckoutPage({cart,products,loading,error, updateCart}){
     <div className="text-center flex flex-col gap-3 ">
         <p>  {totalQty} items</p>
         <h2>Subtotal <span className="font-bold ">${rounded}</span></h2>
-        <button className="bg-amber-400 px-4 py-2 cursor-pointer">Checkout</button>
+        <Link to="/success" className="bg-amber-400 px-4 py-2 cursor-pointer">Checkout</Link>
     </div>
 
     
